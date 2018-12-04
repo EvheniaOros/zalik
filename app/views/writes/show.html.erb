@@ -1,1 +1,14 @@
-show.html.erb
+Автор: <%= @write.user.email %><br />
+Назва:<%= @write.title %><br />
+Перший головний герой:<%= @write.firstheroy %><br />
+Другий головний герой:<%= @write.secondheroy %><br />
+Опис:<%= @write.aboutstory %><br />
+
+
+<% if @write.user_id == current_user.id %>
+
+<%= link_to "Змінити", edit_write_path(@write.id) %> |
+
+<%= link_to "Видалити", write_path(@write.id), method: :delete %><br />
+
+<% end %>

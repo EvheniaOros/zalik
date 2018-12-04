@@ -1,2 +1,7 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
+<h1>Фанфік</h1>
+<p>Якщо ти хочеш почитати цікаві історії або написати свою, то реєструйся і слідкуй за оновленнями</p>
+<hr>
+<%= link_to "Вхід", new_user_session_path %><br />
+<%= link_to "Вихід", destroy_user_session_path, method: :delete %>
+<hr>
+<%= link_to "Створити історію", new_write_path %><br />
