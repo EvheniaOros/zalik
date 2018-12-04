@@ -4,6 +4,16 @@
 <%= link_to "Вхід", new_user_session_path %><br />
 <%= link_to "Вихід", destroy_user_session_path, method: :delete %>
 <hr>
+<% if user_signed_in? %>
+  
+  <% if current_user.userparam.nil? %>
+     <%= link_to "Профіль", new_userparam_path %> |
+  <% else %>
+    <%= link_to "Профіль", userparam_path(current_user.id) %> |
+  <% end %>
+  <% end %>
+  <hr>
+
 <%= link_to "Створити історію", new_write_path %><br />
 <% if @swrite == [] %>
 <% else %>
@@ -22,3 +32,5 @@
    		<hr>
     <% end %>
 <% end %>
+
+<hr>
