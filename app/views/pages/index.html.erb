@@ -5,3 +5,20 @@
 <%= link_to "Вихід", destroy_user_session_path, method: :delete %>
 <hr>
 <%= link_to "Створити історію", new_write_path %><br />
+<% if @swrite == [] %>
+<% else %>
+    <% @write.each do |write| %>
+      <strong>Автор: </strong>
+    	<%= write.user.email %>  <br />
+    	<strong>Назва: </strong> <br>
+   		<%= write.title %><br/>
+   		<strong>Перший головний герой: </strong> <br>
+   		<%= write.firstheroy %><br/>
+   		<strong>Другий головний герой: </strong> <br>
+   		<%= write.secondheroy %><br/>
+   		<strong>Опис: </strong> <br>
+    	<%= write.aboutstory %> <br>
+		<%= link_to "Читати більше", write_path(write.id) %>
+   		<hr>
+    <% end %>
+<% end %>

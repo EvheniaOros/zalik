@@ -1,1 +1,12 @@
-edit.html.erb
+<%= form_for @write, url: write_path(@write.id) do |f| %>
+
+
+<%= f.text_field :title%><br>
+<%= f.text_field :firstheroy%><br>
+<%= f.text_field :secondheroy%><br>
+<%= f.text_field :aboutstory%><br>
+<%= f.text_field :body%><br>
+
+<%= f.submit "Зберегти" %>
+	
+<% end %>

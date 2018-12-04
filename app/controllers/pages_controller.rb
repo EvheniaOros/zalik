@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
   def index
-  	@write - Write.all
+  	@write = Write.all
   end
 end

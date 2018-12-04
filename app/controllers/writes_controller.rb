@@ -17,14 +17,20 @@ before_action :find_post, only: [:show, :edit, :update, :destroy]
 	def edit
 	end
 	def update
+		@write.update(write_params)
+     if @write.save
+     	redirect_to root_path(@write.id)
+     end
 	end
 	def destroy
+		 @write.destroy
+    redirect_to root_path
 	end
 	def find_post
 		@write = Write.find_by(id: params[:id])
 	end
 	private
-	def post_params
+	def write_params
 		params.require(:write).permit(:title, :firstheroy, :secondheroy, :aboutstory, :body)	
 	end
 end
