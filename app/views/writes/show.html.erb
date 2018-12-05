@@ -1,3 +1,6 @@
+<hr>
+<%= link_to "Назад", root_path %><br />
+<hr>
 Автор: <%= @write.user.email %><br />
 Назва:<%= @write.title %><br />
 Перший головний герой:<%= @write.firstheroy %><br />
@@ -12,5 +15,7 @@
 <%= link_to "Змінити", edit_write_path(@write.id) %> |
 
 <%= link_to "Видалити", write_path(@write.id), method: :delete %><br />
+
+
 
 <% end %>
