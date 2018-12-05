@@ -10,6 +10,8 @@ class UserparamsController < ApplicationController
       if @userparam.save
       redirect_to userparam_path(@userparam.id)
       end
+      else
+      render 'new'
   end
   def edit
      @userparam = current_user.userparam
@@ -18,7 +20,10 @@ class UserparamsController < ApplicationController
     @userparam = Userparam.find_by(user_id: current_user.id)
      if @userparam.update(profile_params)
       redirect_to userparam_path(@userparam.id)
-     end
+     
+     else
+      render 'new'
+    end
   end
   def destroy
   end

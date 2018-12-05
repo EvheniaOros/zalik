@@ -10,6 +10,8 @@ before_action :find_post, only: [:show, :edit, :update, :destroy]
 		@write = current_user.writes.build(write_params)
   	if @write.save
   		redirect_to root_path
+  	else
+  		render 'new'
   	end
 	end
     def show
@@ -20,6 +22,8 @@ before_action :find_post, only: [:show, :edit, :update, :destroy]
 		@write.update(write_params)
      if @write.save
      	redirect_to root_path(@write.id)
+     else
+     	render 'edit'
      end
 	end
 	def destroy
