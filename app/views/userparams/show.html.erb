@@ -3,10 +3,10 @@
 <%= link_to "Назад", root_path %><br />
 <hr>
 <h1>Це твій профіль</h1>
+<%= image_tag @userparam.avatar.url(:thumb) %> <br>
+Ім'я: <%= @userparam.firstname %><br />
+Фамілія:<%= @userparam.lastname %><br />
+Вік: <%= @userparam.age %><br />
 
-
-Ім'я: <%= current_user.userparam.firstname %><br />
-Фамілія:<%= current_user.userparam.lastname %><br />
-Вік: <%= current_user.userparam.age %><br />
 <%= link_to "Редагувати", edit_userparam_path(current_user.id) %><br />
 
