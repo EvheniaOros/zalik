@@ -11,7 +11,9 @@
   </div>
 <% end %>
 
+
 <p>Назва історії</p><%= f.text_field :title %><br>
+<p>Жанр</p> <%= f.select :genre_id  , Genre.all.collect {|p| [ p.name, p.id ]}, :prompt => 'Оберіть жанр'%> <br>
 <p>Перший головний герой</p><%= f.text_field :firstheroy %><br>
 <p>Другий головний герой</p><%= f.text_field :secondheroy %><br>
 <p>Короткий опис</p><%= f.text_area :aboutstory, size: "60x10" %><br />
