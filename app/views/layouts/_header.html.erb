@@ -1,0 +1,16 @@
+<%= link_to "Головна сторінка", root_path %> |
+<% if user_signed_in? %>
+  <% if current_user.userparam.nil? %>
+  	<%= link_to "Профіль", new_userparam_path %> |
+  <% else %>
+    <%= link_to "Профіль", userparam_path(current_user.id) %> |
+  <% end %>
+  <%= link_to "Створити історію", new_write_path %> |
+  <%= link_to "Вихід", destroy_user_session_path, method: :delete %> |
+<% else %>
+  <%= link_to "Вхід", new_user_session_path %>
+<% end %>
+<hr>
+
+
+
