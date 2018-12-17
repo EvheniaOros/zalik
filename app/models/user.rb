@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
          has_many :writes
          has_one :userparam
+         has_many :comments
 end
