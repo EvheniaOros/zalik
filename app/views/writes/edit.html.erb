@@ -13,11 +13,16 @@
 
 
 
+<p>Назва</p>
 <%= f.text_field :title%><br>
+<p>Перший головний герой</p>
 <%= f.text_field :firstheroy%><br>
+<p>Другий головний герой</p>
 <%= f.text_field :secondheroy%><br>
-<%= f.text_field :aboutstory%><br>
-<%= f.text_field :body%><br>
+<p>Опис</p>
+<%= f.text_area :aboutstory, size: "60x10"%><br>
+<p>Текст</p>
+<%= f.text_area :body, size: "150x80"%><br>
 
 <%= f.submit "Зберегти" %>
 	

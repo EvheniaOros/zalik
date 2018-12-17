@@ -22,6 +22,8 @@
     	<%= write.user.email %>  <br />
     	<strong>Назва: </strong> <br>
    		<%= write.title %><br/>
+      <strong>Жанр</strong> <br>
+      <%= Genre.find_by(id: write.genre_id).try(:name) %> <br>
    		<strong>Перший головний герой: </strong> <br>
    		<%= write.firstheroy %><br/>
    		<strong>Другий головний герой: </strong> <br>

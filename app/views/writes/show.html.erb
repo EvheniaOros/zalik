@@ -3,6 +3,8 @@
 <hr>
 Автор: <%= @write.user.email %><br />
 Назва:<%= @write.title %><br />
+Жанр: <%= Genre.find_by(id: @write.genre_id).try(:name) %> <br>
+
 Перший головний герой:<%= @write.firstheroy %><br />
 Другий головний герой:<%= @write.secondheroy %><br />
 Опис:<%= @write.aboutstory %><br />

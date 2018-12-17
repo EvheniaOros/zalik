@@ -14,7 +14,7 @@ before_action :find_post, only: [:show, :edit, :update, :destroy]
   		render 'new'
   	end
 	end
-    def show
+    def show 
 	end
 	def edit
 	end
@@ -35,6 +35,6 @@ before_action :find_post, only: [:show, :edit, :update, :destroy]
 	end
 	private
 	def write_params
-		params.require(:write).permit(:title, :firstheroy, :secondheroy, :aboutstory, :body)	
+		params.require(:write).permit(:title, :firstheroy, :secondheroy, :aboutstory, :body, :genre_id)	
 	end
 end
